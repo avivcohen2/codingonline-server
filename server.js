@@ -9,11 +9,11 @@ const handleSocketConnection = require('./socketHandlers');
 const db = knex({
     client: 'pg',
     connection: {
-      host : 'monorail.proxy.rlwy.net:13596',
+      host : 'viaduct.proxy.rlwy.net',
       user : 'postgres',
-      port : '5432',
-      password : 'test',
-      database : 'postgres'
+      port : '32326',
+      password : 'E3GFCgEGE14E5BdC*3a6E3ec*eadEBg2',
+      database : 'railway'
     }
 });
 
