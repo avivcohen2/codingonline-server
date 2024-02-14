@@ -9,11 +9,11 @@ const handleSocketConnection = require('./socketHandlers');
 const db = knex({
     client: 'pg',
     connection: {
-      host : 'PGHOST',
-      user : 'POSTGRES_USER',
-      port : 'PGPORT',
-      password : 'PGPASSWORD',
-      database : 'PGDATABASE'
+      host : process.env.PGHOST,
+      user : process.env.POSTGRES_USER,
+      port : process.env.PGPORT,
+      password : process.env.PGPASSWORD,
+      database : process.env.PGDATABASE
     }
 });
 
