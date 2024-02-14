@@ -36,6 +36,6 @@ app.get('/codeblock/:id', (req, res) => { handleNavigationToCodeBlock.handleNavi
 
 handleSocketConnection(io); // initialize socket logic
 
-server.listen(443, 'https://main--resplendent-bubblegum-a0f262.netlify.app/', () => {
+server.listen('https://main--resplendent-bubblegum-a0f262.netlify.app/', () => {
     console.log('server running');
   });
