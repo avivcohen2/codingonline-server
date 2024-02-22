@@ -10,14 +10,12 @@ const app = express();
 const server = createServer(app);
 const io = new Server(server, {
     cors: {
-      origin: 'https://main--resplendent-bubblegum-a0f262.netlify.app/',
+      origin: '*',
     }
   });
 
 
-app.use(cors({
-    origin: 'https://main--resplendent-bubblegum-a0f262.netlify.app/'
-}));
+app.use(cors());
 
 app.get('/', (req, res) => {
   res.send(codeblocks);
