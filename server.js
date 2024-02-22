@@ -10,7 +10,7 @@ const app = express();
 const server = createServer(app);
 const io = new Server(server, {
     cors: {
-      origin: '*',
+      origin: 'https://main--resplendent-bubblegum-a0f262.netlify.app/',
     }
   });
 
