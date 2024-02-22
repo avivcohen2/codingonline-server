@@ -15,7 +15,9 @@ const io = new Server(server, {
   });
 
 
-app.use(cors());
+app.use(cors({
+    origin: 'https://main--resplendent-bubblegum-a0f262.netlify.app/'
+}));
 
 app.get('/', (req, res) => {
   res.send(codeblocks);
