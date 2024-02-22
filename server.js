@@ -5,17 +5,18 @@ const { Server } = require('socket.io');
 const knex = require('knex')
 const handleNavigationToCodeBlock = require('./controllers/navigateToCodeBlock');
 const handleSocketConnection = require('./socketHandlers');
-
+const PORT = process.env.PORT || 3000;
 const db = knex({
-    client: 'pg',
-    connection: {
-      host : process.env.PGHOST,
-      user : process.env.POSTGRES_USER,
-      port : process.env.PGPORT,
-      password : process.env.PGPASSWORD,
-      database : process.env.PGDATABASE
-    }
+  client: 'pg',
+  connection: {
+    host : process.env.PGHOST,
+    user : process.env.PGUSER,
+    port : process.env.PGPORT,
+    password : process.env.PGPASSWORD,
+    database : process.env.PGDATABASE
+  }
 });
+
 
 const app = express();
 const server = createServer(app);
@@ -36,6 +37,6 @@ app.get('/codeblock/:id', (req, res) => { handleNavigationToCodeBlock.handleNavi
 
 handleSocketConnection(io); // initialize socket logic
 
-server.listen('https://main--resplendent-bubblegum-a0f262.netlify.app/', () => {
+server.listen(PORT, () => {
     console.log('server running');
   });
