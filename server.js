@@ -17,11 +17,11 @@ const io = new Server(server, {
 
 app.use(cors());
 
-app.get('/codeblocks', (req, res) => {
+app.get('/', (req, res) => {
   res.send(codeblocks);
 });
 
-app.get('/codeblocks/:id', (req, res) => { handleNavigationToCodeBlock.handleNavigationToCodeBlock(req, res, codeblocks)});
+app.get('/:id', (req, res) => { handleNavigationToCodeBlock.handleNavigationToCodeBlock(req, res, codeblocks)});
 
 handleSocketConnection(io); // initialize socket logic
 
